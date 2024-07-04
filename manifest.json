@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Full Window",
+  "version": "1.0",
+  "description": "Watch YouTube videos in full window mode.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
