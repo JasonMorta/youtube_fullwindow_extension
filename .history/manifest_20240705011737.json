@@ -15,8 +15,8 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["images/*", "*://*.youtube.com/*"],
-      "matches": ["*://*.youtube.com/*", "*://*.youtube.com/*"]
+      "resources": ["icons/*"]
+
     }
   ],
   "icons": {

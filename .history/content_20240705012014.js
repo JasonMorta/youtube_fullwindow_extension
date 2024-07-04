@@ -145,8 +145,6 @@ checkForPlayabilityError();
 
 
 function addCustomButton() {
-  let isWindowFullScreen = false;
-
   const btnContainer = document.querySelector('.ytp-right-controls');
   console.log('btnContainer', btnContainer);
 
@@ -156,7 +154,7 @@ function addCustomButton() {
 
   // Create img element
   const customImg = document.createElement('img');
-  customImg.src = chrome.runtime.getURL('images/aspect_ratio_30px.png');
+  customImg.src = chrome.runtime.getURL('./icons/aspect_ratio_30px.png');
   customImg.alt = 'Icon';
   customImg.title = 'Full Window';
   customImg.classList.add('custom-image');
@@ -168,53 +166,7 @@ function addCustomButton() {
 
   // Event listener
   customImg.addEventListener('click', () => {
-    //remove added styles if window is already full screen
-    if (isWindowFullScreen) {
-      const videoContainer = document.querySelector('#full-bleed-container');
-      if (videoContainer) {
-        videoContainer.style.height = 'auto';
-        videoContainer.style.width = 'auto';
-        videoContainer.style.position = 'relative';
-        videoContainer.style.top = 'auto';
-        videoContainer.style.left = 'auto';
-        videoContainer.style.zIndex = 'auto';
-        videoContainer.style.maxHeight = 'none';
-      }
-
-      const videoEl = document.querySelector('.video-stream');
-      if (videoEl) {
-        videoEl.style.width = '100%';
-        videoEl.style.height = 'auto';
-        videoEl.style.position = 'relative';
-        videoEl.style.margin = 'auto';
-        videoEl.style.left = 'auto';
-        videoEl.style.top = 'auto';
-      }
-
-  
-    }
-
-    const videoContainer = document.querySelector('#full-bleed-container');
-    if (videoContainer) {
-      isWindowFullScreen = !isWindowFullScreen;
-      videoContainer.style.height = '100dvh'
-      videoContainer.style.width = '100%';
-      videoContainer.style.position = 'absolute';
-      videoContainer.style.top = '0';
-      videoContainer.style.left = '0';
-      videoContainer.style.zIndex = '9999';
-      videoContainer.style.maxHeight = 'none';
-    }
-
-    const videoEl = document.querySelector('.video-stream');
-    if (videoEl) {
-      videoEl.style.width = 'auto';
-      videoEl.style.height = '100dvh';
-      videoEl.style.position = 'relative';
-      videoEl.style.margin = 'auto';
-      videoEl.style.left = '0';
-      videoEl.style.top = '0';
-    }
+    alert('Custom image clicked');
   });
 
   // Append img

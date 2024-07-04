@@ -13,12 +13,6 @@
       "js": ["content.js"]
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": ["images/*", "*://*.youtube.com/*"],
-      "matches": ["*://*.youtube.com/*", "*://*.youtube.com/*"]
-    }
-  ],
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
